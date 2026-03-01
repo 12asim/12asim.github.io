@@ -1,19 +1,33 @@
 ---
+interface Props {
+  position?: "fixed" | "absolute" | "static";
+  showGoUpButton?: boolean;
+  revealOnScroll?: boolean;
+}
+const {
+  position = "fixed",
+  showGoUpButton = true,
+  revealOnScroll = false,
+} = Astro.props;
+
+const revealClasses = revealOnScroll
+  ? "opacity-0 -translate-x-4 pointer-events-none"
+  : "";
 ---
 
 <header
   id="navbar"
-  class="w-full py-5 fixed top-0 left-0 z-50 border-b border-border-subtle/55 bg-charcoal transition-all duration-300"
+  class={`w-full py-5 ${position} top-0 left-0 z-50 border-b border-border-subtle/55 bg-charcoal transition-all duration-300`}
 >
   <div
     class="max-w-[820px] mx-auto px-6 flex justify-between items-center w-full min-h-[40px]"
   >
     <!-- Left side: Name and hidden dynamic elements -->
     <div class="flex items-center gap-3 -ml-3">
-      <!-- Dynamic Avatar (Hidden initially) -->
+      <!-- Dynamic Avatar -->
       <div
         id="nav-avatar"
-        class="w-10 h-10 rounded-full overflow-hidden border border-border-subtle bg-surface flex items-center justify-center opacity-0 -translate-x-4 transition-all duration-[400ms] hidden sm:flex pointer-events-none"
+        class={`w-10 h-10 rounded-full overflow-hidden border border-border-subtle bg-surface flex items-center justify-center transition-all duration-[400ms] hidden sm:flex ${revealClasses}`}
       >
         <img
           src="/images/tuffbaby.jpeg"
@@ -29,10 +43,10 @@
         Asim Shirinov
       </h2>
 
-      <!-- Dynamic Links (Hidden initially) -->
+      <!-- Dynamic Links -->
       <div
         id="nav-links"
-        class="flex items-center gap-3 opacity-0 -translate-x-4 transition-all duration-[400ms] pointer-events-none"
+        class={`flex items-center gap-3 transition-all duration-[400ms] ${revealClasses}`}
       >
         <a
           href="https://github.com/12asim"
@@ -83,24 +97,29 @@
     </div>
 
     <!-- Right side: Dynamic Back to Top Button (Hidden initially) -->
-    <button
-      id="nav-top-btn"
-      class="flex items-center justify-center w-9 h-9 rounded-md bg-transparent border border-border-subtle text-text-primary hover:bg-surface transition-all duration-[400ms] opacity-0 pointer-events-none"
-      aria-label="Scroll to top"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        ><path d="M12 19V5M5 12l7-7 7 7"></path>
-      </svg>
-    </button>
+    {
+      showGoUpButton && (
+        <button
+          id="nav-top-btn"
+          class="flex items-center justify-center w-9 h-9 rounded-md bg-transparent border border-border-subtle text-text-primary hover:bg-surface transition-all duration-[400ms] opacity-0 pointer-events-none"
+          aria-label="Scroll to top"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 19V5M5 12l7-7 7 7" />
+          </svg>
+        </button>
+      )
+    }
   </div>
 </header>
 
@@ -113,6 +132,8 @@
   // e.g., show navbar icons after scrolling past the Hero avatar
 
   let isScrolled = false;
+  // Check if we need to reveal avatar and links based on initial class presence
+  const hasRevealLogic = navAvatar?.classList.contains("opacity-0");
 
   const handleScroll = () => {
     // Reveal distance roughly aligns with scrolling past the hero portion
@@ -122,29 +143,31 @@
     if (currentScroll > scrollRevealThreshold && !isScrolled) {
       isScrolled = true;
 
-      // Show Avatar
-      navAvatar?.classList.remove(
-        "opacity-0",
-        "-translate-x-4",
-        "pointer-events-none"
-      );
-      navAvatar?.classList.add(
-        "opacity-100",
-        "translate-x-0",
-        "pointer-events-auto"
-      );
+      if (hasRevealLogic) {
+        // Show Avatar
+        navAvatar?.classList.remove(
+          "opacity-0",
+          "-translate-x-4",
+          "pointer-events-none"
+        );
+        navAvatar?.classList.add(
+          "opacity-100",
+          "translate-x-0",
+          "pointer-events-auto"
+        );
 
-      // Show Social Links
-      navLinks?.classList.remove(
-        "opacity-0",
-        "-translate-x-4",
-        "pointer-events-none"
-      );
-      navLinks?.classList.add(
-        "opacity-100",
-        "translate-x-0",
-        "pointer-events-auto"
-      );
+        // Show Social Links
+        navLinks?.classList.remove(
+          "opacity-0",
+          "-translate-x-4",
+          "pointer-events-none"
+        );
+        navLinks?.classList.add(
+          "opacity-100",
+          "translate-x-0",
+          "pointer-events-auto"
+        );
+      }
 
       // Show Scroll Top Button (Fade only, no translation)
       navTopBtn?.classList.remove("opacity-0", "pointer-events-none");
@@ -152,29 +175,31 @@
     } else if (currentScroll <= scrollRevealThreshold && isScrolled) {
       isScrolled = false;
 
-      // Hide Avatar
-      navAvatar?.classList.add(
-        "opacity-0",
-        "-translate-x-4",
-        "pointer-events-none"
-      );
-      navAvatar?.classList.remove(
-        "opacity-100",
-        "translate-x-0",
-        "pointer-events-auto"
-      );
+      if (hasRevealLogic) {
+        // Hide Avatar
+        navAvatar?.classList.add(
+          "opacity-0",
+          "-translate-x-4",
+          "pointer-events-none"
+        );
+        navAvatar?.classList.remove(
+          "opacity-100",
+          "translate-x-0",
+          "pointer-events-auto"
+        );
 
-      // Hide Social Links
-      navLinks?.classList.add(
-        "opacity-0",
-        "-translate-x-4",
-        "pointer-events-none"
-      );
-      navLinks?.classList.remove(
-        "opacity-100",
-        "translate-x-0",
-        "pointer-events-auto"
-      );
+        // Hide Social Links
+        navLinks?.classList.add(
+          "opacity-0",
+          "-translate-x-4",
+          "pointer-events-none"
+        );
+        navLinks?.classList.remove(
+          "opacity-100",
+          "translate-x-0",
+          "pointer-events-auto"
+        );
+      }
 
       // Hide Scroll Top Button (Fade only, no translation)
       navTopBtn?.classList.add("opacity-0", "pointer-events-none");
