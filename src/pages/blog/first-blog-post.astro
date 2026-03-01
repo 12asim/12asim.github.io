@@ -11,169 +11,161 @@ import Footer from "../../components/Footer.astro";
         alignSocialsRight={true}
     />
 
-    <main
-        class="w-full flex justify-center py-20 md:py-24 px-6 flex-grow flex-1"
-    >
-        <article class="max-w-[820px] w-full flex flex-col gap-6 pt-4">
-            <a
-                href="/#blog"
-                class="text-text-secondary hover:text-text-primary transition-colors text-sm font-[var(--font-weight-medium)] flex items-center gap-2 w-fit mb-4 px-3.5 py-1.5 rounded-lg border border-border-subtle/60 hover:bg-surface/80"
+    <article class="w-full flex flex-col gap-6 pt-4">
+        <a
+            href="/#blog"
+            class="text-text-secondary hover:text-text-primary transition-colors text-sm font-[var(--font-weight-medium)] flex items-center gap-2 w-fit mb-4 px-3.5 py-1.5 rounded-lg border border-border-subtle/60 hover:bg-surface/80"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
-                </svg>
-                Back to home
-            </a>
+                <path d="M19 12H5M12 19l-7-7 7-7"></path>
+            </svg>
+            Back to home
+        </a>
 
-            <header class="flex flex-col gap-3 mb-4">
-                <h1
-                    class="text-text-primary text-3xl md:text-4xl font-[var(--font-weight-bold)] tracking-tight"
-                >
-                    First Blog Post
-                </h1>
-                <div
-                    class="text-text-secondary font-[var(--font-weight-medium)] text-[14px] flex items-center gap-2"
-                >
-                    <time datetime="2026-02-28">February 28, 2026</time>
-                    <span>•</span>
-                    <span>About 2 min read</span>
-                </div>
-            </header>
-
+        <header class="flex flex-col gap-3 mb-4">
+            <h1
+                class="text-text-primary text-3xl md:text-4xl font-[var(--font-weight-bold)] tracking-tight"
+            >
+                First Blog Post
+            </h1>
             <div
-                class="prose text-[1.25em] prose-invert prose-p:text-text-primary prose-p:leading-relaxed prose-headings:text-text-primary prose-a:text-white hover:prose-a:text-gray-300 prose-strong:text-white max-w-none"
+                class="text-text-secondary font-[var(--font-weight-medium)] text-[14px] flex items-center gap-2"
             >
-                <p>
-                    Have you ever seen someone so good at what they do that you
-                    think "Damn, one day I want to be as good as this guy"?
-                    <br />
-                    <br />
-                </p>
-
-                <p>
-                    Everything started with <a
-                        class="!text-[#a1a1aa] inline-flex items-center no-underline"
-                        href="https://scratch.mit.edu/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Scratch
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="h-3 w-3 relative -top-1"
-                        >
-                            <path d="M14 3h7v7"></path>
-                            <path d="M10 14 21 3"></path>
-                            <path d="M21 14v7h-7"></path>
-                            <path d="M3 10V3h7"></path>
-                        </svg>
-                    </a>. I have been making games and small coding projects
-                    which helped me develop problem solving skills since I
-                    was&nbsp;12. One day, while browsing YouTube I came across
-                    someone who was teaching competitive programming in my
-                    native language,&nbsp;<a
-                        class="!text-[#a1a1aa] inline-flex items-center no-underline"
-                        href="https://www.linkedin.com/in/abutalib-namazov/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        ><span>Barish Namazov</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="h-3 w-3 relative -top-1"
-                        >
-                            <path d="M14 3h7v7"></path>
-                            <path d="M10 14 21 3"></path>
-                            <path d="M21 14v7h-7"></path>
-                            <path d="M3 10V3h7"></path>
-                        </svg>
-                    </a>. There were four videos, each video lasting around
-                    three hours. After watching one of the videos I was
-                    impressed by how good he was and how well he explained
-                    things.
-                    <br />
-                    <br />
-                </p>
-
-                <p>
-                    In December 2025, I saw <a
-                        class="!text-[#a1a1aa] inline-flex items-center no-underline"
-                        href="https://barish.me/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >his blog
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="h-3 w-3 relative -top-1"
-                        >
-                            <path d="M14 3h7v7"></path>
-                            <path d="M10 14 21 3"></path>
-                            <path d="M21 14v7h-7"></path>
-                            <path d="M3 10V3h7"></path>
-                        </svg>
-                    </a> and read some of his
-                    posts which were pretty interesting and fun to read. I sent
-                    him an email and asked for advice, because he was an
-                    inspiring and intelligent person for me and I wanted some
-                    guidance in my field about what to do, and he gave me some
-                    good advice. One of the pieces of advice is that I should
-                    learn how to write well. I guess he is trying to say that I
-                    should be able to write and communicate well, which are
-                    pretty important skills.
-                    <br />
-                    <br />
-                </p>
-
-                <p>
-                    So I know some really smart people majoring in computer
-                    science at top universities and realized that they have
-                    their own websites and blogs. They use them to share what
-                    they do and document their progress. Why can't I? I could
-                    learn the technical stuff like hosting, domains, and website
-                    deployment, and at the same time I could share my thoughts and
-                    improve myself through writing.
-                    <br />
-                    <br />
-                </p>
-
-                <p>
-                    In the rest of this blog, I will write about my daily life,
-                    technology, the things I am learning, and whatever else
-                    genuinely interests me.
-                    <br />
-                    <br />
-                </p>
-
-                <p>Thank you so much for reading.</p>
+                <time datetime="2026-02-28">February 28, 2026</time>
+                <span>•</span>
+                <span>About 2 min read</span>
             </div>
-        </article>
-    </main>
+        </header>
+
+        <div
+            class="prose text-[1.25em] prose-invert prose-p:text-text-primary prose-p:leading-relaxed prose-headings:text-text-primary prose-a:text-white hover:prose-a:text-gray-300 prose-strong:text-white max-w-none"
+        >
+            <p>
+                Have you ever seen someone so good at what they do that you
+                think "Damn, one day I want to be as good as this guy"?
+                <br />
+                <br />
+            </p>
+
+            <p>
+                Everything started with <a
+                    class="!text-[#a1a1aa] inline-flex items-center no-underline"
+                    href="https://scratch.mit.edu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Scratch
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="h-3 w-3 relative -top-1"
+                    >
+                        <path d="M14 3h7v7"></path>
+                        <path d="M10 14 21 3"></path>
+                        <path d="M21 14v7h-7"></path>
+                        <path d="M3 10V3h7"></path>
+                    </svg>
+                </a>. I have been making games and small coding projects which
+                helped me develop problem solving skills since I was&nbsp;12.
+                One day, while browsing YouTube I came across someone who was
+                teaching competitive programming in my native language,&nbsp;<a
+                    class="!text-[#a1a1aa] inline-flex items-center no-underline"
+                    href="https://www.linkedin.com/in/abutalib-namazov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><span>Barish Namazov</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="h-3 w-3 relative -top-1"
+                    >
+                        <path d="M14 3h7v7"></path>
+                        <path d="M10 14 21 3"></path>
+                        <path d="M21 14v7h-7"></path>
+                        <path d="M3 10V3h7"></path>
+                    </svg>
+                </a>. There were four videos, each video lasting around three
+                hours. After watching one of the videos I was impressed by how
+                good he was and how well he explained things.
+                <br />
+                <br />
+            </p>
+
+            <p>
+                In December 2025, I saw <a
+                    class="!text-[#a1a1aa] inline-flex items-center no-underline"
+                    href="https://barish.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >his blog
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="h-3 w-3 relative -top-1"
+                    >
+                        <path d="M14 3h7v7"></path>
+                        <path d="M10 14 21 3"></path>
+                        <path d="M21 14v7h-7"></path>
+                        <path d="M3 10V3h7"></path>
+                    </svg>
+                </a> and read some of his posts which were pretty interesting and
+                fun to read. I sent him an email and asked for advice, because he
+                was an inspiring and intelligent person for me and I wanted some
+                guidance in my field about what to do, and he gave me some good advice.
+                One of the pieces of advice is that I should learn how to write well.
+                I guess he is trying to say that I should be able to write and communicate
+                well, which are pretty important skills.
+                <br />
+                <br />
+            </p>
+
+            <p>
+                So I know some really smart people majoring in computer science
+                at top universities and realized that they have their own
+                websites and blogs. They use them to share what they do and
+                document their progress. Why can't I? I could learn the
+                technical stuff like hosting, domains, and website deployment,
+                and at the same time I could share my thoughts and improve
+                myself through writing.
+                <br />
+                <br />
+            </p>
+
+            <p>
+                In the rest of this blog, I will write about my daily life,
+                technology, the things I am learning, and whatever else
+                genuinely interests me.
+                <br />
+                <br />
+            </p>
+
+            <p>Thank you so much for reading.</p>
+        </div>
+    </article>
 
     <Footer />
 </Layout>
