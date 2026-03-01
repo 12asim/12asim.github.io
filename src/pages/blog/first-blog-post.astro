@@ -5,7 +5,11 @@ import Footer from "../../components/Footer.astro";
 ---
 
 <Layout title="First Blog Post | asim shirinov">
-    <Navbar position="absolute" showGoUpButton={false} />
+    <Navbar
+        position="absolute"
+        showGoUpButton={false}
+        alignSocialsRight={true}
+    />
 
     <main
         class="w-full flex justify-center py-20 md:py-24 px-6 flex-grow flex-1"
@@ -42,7 +46,7 @@ import Footer from "../../components/Footer.astro";
                 >
                     <time datetime="2026-02-28">February 28, 2026</time>
                     <span>•</span>
-                    <span>About 5 min read</span>
+                    <span>About 2 min read</span>
                 </div>
             </header>
 
@@ -59,16 +63,54 @@ import Footer from "../../components/Footer.astro";
 
                 <p>
                     Everything started with <a
+                        class="!text-[#a1a1aa] inline-flex items-center no-underline"
                         href="https://scratch.mit.edu/"
                         target="_blank"
-                        rel="noopener noreferrer">Scratch</a
-                    >. I have been making games and small coding projects which
-                    helped me develop problem solving skills since I was 12. One
-                    day, while browsing YouTube I came across someone who was
-                    teaching competitive programming in my native language,
-                    Abutalib-Barish Namazov. There were four videos, each video
-                    lasting around three hours. After watching one of the videos
-                    I was impressed by how good he was and how well he explained
+                        rel="noopener noreferrer"
+                        >Scratch
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="h-3 w-3 relative -top-1"
+                        >
+                            <path d="M14 3h7v7"></path>
+                            <path d="M10 14 21 3"></path>
+                            <path d="M21 14v7h-7"></path>
+                            <path d="M3 10V3h7"></path>
+                        </svg>
+                    </a>. I have been making games and small coding projects
+                    which helped me develop problem solving skills since I
+                    was&nbsp;12. One day, while browsing YouTube I came across
+                    someone who was teaching competitive programming in my
+                    native language,&nbsp;<a
+                        class="!text-[#a1a1aa] inline-flex items-center no-underline"
+                        href="https://www.linkedin.com/in/abutalib-namazov/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        ><span>Barish Namazov</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="h-3 w-3 relative -top-1"
+                        >
+                            <path d="M14 3h7v7"></path>
+                            <path d="M10 14 21 3"></path>
+                            <path d="M21 14v7h-7"></path>
+                            <path d="M3 10V3h7"></path>
+                        </svg>
+                    </a>. There were four videos, each video lasting around
+                    three hours. After watching one of the videos I was
+                    impressed by how good he was and how well he explained
                     things.
                     <br />
                     <br />
@@ -92,10 +134,10 @@ import Footer from "../../components/Footer.astro";
                     So I know some really smart people majoring in computer
                     science at top universities and realized that they have
                     their own websites and blogs. They use them to share what
-                    they do and document their progress. Why can't I? I could
+                    they do and document their progress. Why can't I? <br /> I could
                     learn the technical stuff like hosting, domains, and website
-                    deployment, and at the same time I could share my thoughts
-                    and improve myself through writing.
+                    deployment, and at the same time I could share my thoughts and
+                    improve myself through writing.
                     <br />
                     <br />
                 </p>
